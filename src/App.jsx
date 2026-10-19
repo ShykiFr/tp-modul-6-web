@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import KartuMenu from './components/KartuMenu'
+import LabelHarga from './components/LabelHarga'
+import Panel from './components/Panel'
 import './App.css'
 
   const nama = "Kantin Shiky"
@@ -13,6 +15,12 @@ function App() {
       <p>{jam < 12 ? 'Selamat Pagi' : 'Selamat Siang'}</p>
       <p>Saldo awal kartu kantin: Rp. {N * 1000}</p>
       <button disabled>Bayar</button>
+
+      <Panel judul='Menu Hari Ini'>
+        <KartuMenu nama='Nasi Ayam Geprek' harga={10000 + N * 100}></KartuMenu>
+        <KartuMenu nama='Es teh' kategori='Minuman' harga={10000}></KartuMenu>
+        <KartuMenu nama='Mie Goreng' harga={10000}></KartuMenu>
+      </Panel>
     </>
   )
 }
